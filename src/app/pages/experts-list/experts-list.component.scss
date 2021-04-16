@@ -1,0 +1,22 @@
+.create-btn {
+    height: 40px;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    width:187.5px;
+    height: 2.5rem;
+    background-color: transparent;
+    radius:5px;
+    padding:10px, 20px, 10px, 20px;
+    
+    border: 0.4px solid #0ED28C;
+    background-color: #0ED28C;
+    color: white;
+;
+
+  &:hover{
+    color: #0ED28C;
+    background-color: white;
+ 
+  }
+}

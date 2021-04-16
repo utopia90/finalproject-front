@@ -1,0 +1,44 @@
+<div class="expert-submit-form">
+
+<form [formGroup]="formGroup" (submit)="submitRegisterForm()">
+  <mat-form-field>
+    <input matInput placeholder="First Name" formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Last Name" formControlName="surname" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Phone" formControlName="phone" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="mail" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Address" formControlName="address" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="String" matInput placeholder="Dni" formControlName="dni" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="String" matInput placeholder="Linkedln" formControlName="linkedln" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="String" matInput placeholder="State" formControlName="state" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="String" matInput placeholder="Rating from 0 to 100" formControlName="rating" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="String" matInput placeholder="Availability" formControlName="availability" />
+  </mat-form-field>
+
+
+  <button class="form-btn" type="submit">
+    Register New Expert
+  </button>
+</form>
+</div>
