@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExpertsListComponent } from './pages/experts-list/experts-list.component';
 import { TagsListComponent } from './pages/tags-list/tags-list.component';
 import { CreateExpertComponent } from './pages/create-expert/create-expert.component';
-
-
+import { ExpertDetailComponent } from './pages/expert-detail/expert-detail.component';
 
 
 const routes: Routes = [
@@ -16,6 +15,10 @@ const routes: Routes = [
   {
     path: 'experts', 
     component: ExpertsListComponent,
+  },
+  {
+    path: 'expert-detail', 
+    component: ExpertDetailComponent,
   },
   {
     path: 'tags', 
