@@ -13,4 +13,7 @@ export class TagsService {
   getAllTags(){
     return this.http.get('https://serene-wave-12377.herokuapp.com/api/tags');
   }
+  register(tag){
+    return this.http.post('https://serene-wave-12377.herokuapp.com/api/tags', tag);
+  }
 }

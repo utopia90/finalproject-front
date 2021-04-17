@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -19,6 +19,7 @@ export class ExpertsTableComponent implements AfterViewInit  {
   blocks: any[];
 
 
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'estado', 'etiquetas','valoracion'];
 
@@ -29,7 +30,9 @@ export class ExpertsTableComponent implements AfterViewInit  {
       this.blocks = res;
        this.dataSource = new MatTableDataSource<any>(this.blocks);
 
-       console.log(res)
+       console.log(res);
+       let dataLength = res.length;
+       localStorage.setItem('length', dataLength); 
     });
 
  }

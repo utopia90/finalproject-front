@@ -32,6 +32,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TagsTableComponent } from './components/elements/tags-table/tags-table.component';
+import { ToolbarListsComponent } from './components/elements/toolbar-lists/toolbar-lists.component';
+import { ToolbarBackComponent } from './components/elements/toolbar-back/toolbar-back.component';
+import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { TagsTableComponent } from './components/elements/tags-table/tags-table.
     HeaderComponent,
     ExpertsTableComponent,
     TagsTableComponent,
+    ToolbarListsComponent,
+    ToolbarBackComponent,
+    CreateTagComponent,
   ],
   imports: [
     BrowserModule,

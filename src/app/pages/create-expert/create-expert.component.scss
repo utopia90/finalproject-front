@@ -1,15 +1,27 @@
 .form-btn {
   height: 49px;
-  width: 57rem;
+  min-width: 46rem;
+  margin-top: 1rem;
   border-radius: 5px;
   padding: 20px;
   background-color: #0ed28c;
-  color: black;
+  color: lightgray;
   border: none;
+
+  &:hover{
+    background-color: lightgray;
+    color:#0ed28c;
+  }
 }
 
 .expert-submit-form{ 
     text-align: center;
-    margin-left: 15rem;
     margin-top: 7rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.mat-card.mat-card.mat-focus-indicator {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
 }

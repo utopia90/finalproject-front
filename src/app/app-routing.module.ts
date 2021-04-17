@@ -4,6 +4,8 @@ import { ExpertsListComponent } from './pages/experts-list/experts-list.componen
 import { TagsListComponent } from './pages/tags-list/tags-list.component';
 import { CreateExpertComponent } from './pages/create-expert/create-expert.component';
 import { ExpertDetailComponent } from './pages/expert-detail/expert-detail.component';
+import { CreateTagComponent } from './pages/create-tag/create-tag.component';
+
 
 
 const routes: Routes = [
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path: 'new-expert', 
     component: CreateExpertComponent,
+  },
+  {
+    path: 'new-tag', 
+    component: CreateTagComponent,
   },
 ];
 

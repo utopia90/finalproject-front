@@ -27,10 +27,11 @@ export class TagsTableComponent implements AfterViewInit {
   }
   ngOnInit(): void {
     this.tagsService.getAllTags().subscribe((res: any) => {
-       this.blocks = res;
+        this.blocks=res;
         this.dataSource = new MatTableDataSource<any>(this.blocks);
- 
+
         console.log(res)
+ 
      });
  
   }

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tags-list.component.scss']
 })
 export class TagsListComponent implements OnInit {
+  listName="etiquetas"
+  tag=true;
 
   constructor() { }
 
