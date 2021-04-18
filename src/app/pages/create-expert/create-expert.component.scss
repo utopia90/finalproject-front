@@ -1,11 +1,11 @@
 .form-btn {
   height: 49px;
-  min-width: 46rem;
+  min-width: 37rem;
   margin-top: 1rem;
   border-radius: 5px;
   padding: 20px;
   background-color: #0ed28c;
-  color: lightgray;
+  color: white;
   border: none;
 
   &:hover{
@@ -24,4 +24,13 @@
   width: 80%;
   margin: 0 auto;
   margin-top: 5rem;
+}
+input {
+  margin-right: 1rem;
+}
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  margin-right: 1rem;
 }

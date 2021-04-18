@@ -14,7 +14,7 @@ export class ExpertsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-     this.length = localStorage.getItem('length')
+     this.length = localStorage.getItem('expertsLength')
   }
 
 }

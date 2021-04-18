@@ -1,3 +1,4 @@
+import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -25,11 +26,33 @@ export class CreateExpertComponent implements OnInit {
       phone:  ['', Validators.compose([Validators.required, Validators.minLength(5)])], 
       address:  ['', Validators.compose([Validators.required, Validators.minLength(5)])], 
       dni:  ['', Validators.compose([Validators.required, Validators.minLength(5)])], 
+      tags: this.formBuilder.array([]),
       state:  ['', Validators.compose([Validators.required, Validators.minLength(5)])], 
       rating:  ['', Validators.compose([Validators.required, Validators.maxLength(3)])], 
       availability:  ['', Validators.compose([Validators.required, Validators.minLength(2)])], 
     });
   }
+  get tagsArray(): FormArray{
+    return this.formGroup.get('tags') as FormArray
+  }
+
+  addTag() {
+
+    const tags = this.formBuilder.group(
+      {
+        name: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])]
+      }
+    );
+    console.log(tags)
+    this.tagsArray.push(tags);
+
+  }
+
+  removeTag(index: number) {
+    this.tagsArray.removeAt(index);
+  }
+
+
 
   submitRegisterForm(){
      this.expertService.register(this.formGroup.value).subscribe((response) => {

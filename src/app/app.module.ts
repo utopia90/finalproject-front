@@ -35,6 +35,7 @@ import { TagsTableComponent } from './components/elements/tags-table/tags-table.
 import { ToolbarListsComponent } from './components/elements/toolbar-lists/toolbar-lists.component';
 import { ToolbarBackComponent } from './components/elements/toolbar-back/toolbar-back.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { CreateTagComponent } from './pages/create-tag/create-tag.component';
     ToolbarListsComponent,
     ToolbarBackComponent,
     CreateTagComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

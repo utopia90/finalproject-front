@@ -1,8 +1,6 @@
 
 <app-toolbar-back [tag]="tag"></app-toolbar-back>
-<mat-card>
-<mat-card-content>
-<mat-card class="expert-submit-form"></mat-card>
+<mat-card class="tag-submit-form">
 <form [formGroup]="formGroup" (submit)="submitRegisterForm()">
     <mat-form-field>
       <input matInput placeholder="Name" formControlName="name" />
@@ -11,4 +9,4 @@
         Register New Tag
       </button>
   </form>
-<mat-card-content>
+</mat-card>

@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class TagsListComponent implements OnInit {
   listName="etiquetas"
   tag=true;
+  length;
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.length = localStorage.getItem('tagLength')
+
   }
 
 }

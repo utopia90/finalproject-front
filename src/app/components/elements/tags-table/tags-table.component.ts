@@ -16,7 +16,10 @@ export class TagsTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<TagsTableItem>;
   dataSource;
-  blocks: any[];
+  blocks: [
+    {"id": ''},
+    {"name": ''}
+  ];
 
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -27,11 +30,11 @@ export class TagsTableComponent implements AfterViewInit {
   }
   ngOnInit(): void {
     this.tagsService.getAllTags().subscribe((res: any) => {
-        this.blocks=res;
-        this.dataSource = new MatTableDataSource<any>(this.blocks);
+        this.blocks = res;
+        this.dataSource = new MatTableDataSource<any>(this.blocks); 
 
-        console.log(res)
- 
+        let dataLength = res.length;
+        localStorage.setItem('tagLength', dataLength); 
      });
  
   }

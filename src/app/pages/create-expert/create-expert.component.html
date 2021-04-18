@@ -6,14 +6,14 @@
 
 <form [formGroup]="formGroup" (submit)="submitRegisterForm()">
   <mat-form-field>
-    <input matInput placeholder="First Name" formControlName="name" />
+    <input matInput placeholder="Nombre" formControlName="name" />
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Last Name" formControlName="surname" />
+    <input matInput placeholder="Apellidos" formControlName="surname" />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Phone" formControlName="phone" />
+    <input matInput placeholder="Teléfono" formControlName="phone" />
   </mat-form-field>
 
   <mat-form-field>
@@ -21,8 +21,19 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Address" formControlName="address" />
+    <input matInput placeholder="Dirección" formControlName="address" />
   </mat-form-field>
+  <div formArrayName="tags">
+
+    <div *ngFor="let tag of tagsArray.controls; let i = index" formGroupName="{{i}}">
+
+      <mat-form-field>
+        <input type="string" matInput placeholder="Tag" formControlName="name"/>
+      </mat-form-field>
+      <button type='button' mat-raised-button color="warn" (click)="removeTag(i)">Remove</button>
+    </div>
+    <button type='button' mat-raised-button color="primary" (click)="addTag()">New Tag</button>
+  </div>
 
   <mat-form-field>
     <input type="String" matInput placeholder="Dni" formControlName="dni" />
@@ -31,13 +42,13 @@
     <input type="String" matInput placeholder="Linkedln" formControlName="linkedln" />
   </mat-form-field>
   <mat-form-field>
-    <input type="String" matInput placeholder="State" formControlName="state" />
+    <input type="String" matInput placeholder="Estado" formControlName="state" />
   </mat-form-field>
   <mat-form-field>
-    <input type="String" matInput placeholder="Rating from 0 to 100" formControlName="rating" />
+    <input type="String" matInput placeholder="Valoración (de 0 a 100)" formControlName="rating" />
   </mat-form-field>
   <mat-form-field>
-    <input type="String" matInput placeholder="Availability" formControlName="availability" />
+    <input type="String" matInput placeholder="Disponibilidad" formControlName="availability" />
   </mat-form-field>
 
 
