@@ -1,6 +1,8 @@
 import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {Router, ActivatedRoute, Params, Route, ParamMap} from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',

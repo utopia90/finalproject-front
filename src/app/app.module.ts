@@ -75,7 +75,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
