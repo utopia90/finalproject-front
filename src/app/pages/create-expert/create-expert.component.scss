@@ -34,3 +34,33 @@ input {
   text-align: left;
   margin-right: 1rem;
 }
+.ng-untouched.ng-pristine.ng-invalid.ng-star-inserted {
+  position: relative;
+  left: 12rem;
+}
+.tags-container{
+  margin: 0 auto;
+    width: 83%;
+}
+
+.tag-btn{
+  align-self: center;
+    min-width: 36rem;
+    min-height: 2rem;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.tag-delete-btn{
+  max-height: 2rem;
+  min-width: 2rem;
+  align-self: center;
+  border: none;
+  background-color: #0ed28c;
+  color: white;
+
+}
+.new-tag-container{
+  display: flex;
+}

@@ -21,11 +21,17 @@
 .contact-block {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
 
   &-title{
       color: gray;
       margin-bottom: 2rem;
+  }
+
+  &__tags{
+    width: 40%;
+    position: relative;
+    left: 4rem;
   }
 
   &__item {
@@ -43,9 +49,7 @@
   &__container {
     margin-bottom: 2rem;
   }
-  :nth-child(5) .contact-block__item span:nth-child(2) {
-    width: 44%;
-  }
+
   &__img {
     width: 1rem;
     margin-right: 0.5rem;
@@ -55,6 +59,7 @@
 .cv-block {
   display: flex;
   justify-content: space-between;
+  width: 83%;
   &__title {
     display: flex;
   }
@@ -81,7 +86,7 @@
 .bottom-block {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
 }
 
 .img.contact-block__img {

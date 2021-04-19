@@ -59,11 +59,14 @@
                    <button class="cv-btn">Volver a subir</button>
                 </div>
                </div>
-           
-
            </div>
+           <div class="contact-block__tags">
            <div class="contact-block-title">ETIQUETAS</div>
+           <div *ngFor="let tag of expert.tags">
+               {{tag.name}}
+           </div>
         </div>
+    </div>
     </div>
     </mat-card-content>
 </mat-card>

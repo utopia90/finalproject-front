@@ -19,20 +19,16 @@
   <mat-form-field>
     <input matInput placeholder="Email" formControlName="mail" />
   </mat-form-field>
+  <div formArrayName="tags" class="tags-container">
 
-  <mat-form-field>
-    <input matInput placeholder="Dirección" formControlName="address" />
-  </mat-form-field>
-  <div formArrayName="tags">
-
-    <div *ngFor="let tag of tagsArray.controls; let i = index" formGroupName="{{i}}">
-
+    <div class="new-tag-container" *ngFor="let tag of tagsArray.controls; let i = index" formGroupName="{{i}}">
       <mat-form-field>
-        <input type="string" matInput placeholder="Tag" formControlName="name"/>
+        <input matInput type="string" matInput placeholder="Tag" formControlName="name"/>
       </mat-form-field>
-      <button type='button' mat-raised-button color="warn" (click)="removeTag(i)">Remove</button>
+      <button class="tag-delete-btn"type='button'(click)="removeTag(i)">x</button>
     </div>
-    <button type='button' mat-raised-button color="primary" (click)="addTag()">New Tag</button>
+    <button class="tag-btn"type='button'(click)="addTag()">Añadir etiquetas</button>
+
   </div>
 
   <mat-form-field>
