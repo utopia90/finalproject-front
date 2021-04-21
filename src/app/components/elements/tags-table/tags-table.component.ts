@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { TagsTableDataSource, TagsTableItem } from './tags-table-datasource';
 import { TagsService } from '../../../services/tags.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class TagsTableComponent implements AfterViewInit {
   displayedColumns = ['id', 'name'];
 
   constructor(private tagsService: TagsService) {
-    this.dataSource = new TagsTableDataSource();
+    this.dataSource = new TagsTableDataSource()
   }
   ngOnInit(): void {
     this.tagsService.getAllTags().subscribe((res: any) => {
@@ -44,4 +45,6 @@ export class TagsTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+ 
 }

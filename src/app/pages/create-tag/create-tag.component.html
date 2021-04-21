@@ -1,12 +1,13 @@
 
-<app-toolbar-back [tag]="tag"></app-toolbar-back>
-<mat-card class="tag-submit-form">
-<form [formGroup]="formGroup" (submit)="submitRegisterForm()">
-    <mat-form-field>
-      <input matInput placeholder="Name" formControlName="name" />
-    </mat-form-field>
-    <button class="form-btn" type="submit">
-        Register New Tag
-      </button>
-  </form>
-</mat-card>
+  <app-toolbar-back [tag]="tag"></app-toolbar-back>
+  <mat-card class="tag-submit-form">
+  <form [formGroup]="formGroup" (submit)="submitRegisterForm()">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <button class="form-btn" type="submit">
+          Register New Tag
+        </button>
+    </form>
+  </mat-card>
+

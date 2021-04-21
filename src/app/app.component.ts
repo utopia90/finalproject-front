@@ -1,7 +1,6 @@
-import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
-import {Router, ActivatedRoute, Params, Route, ParamMap} from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {Router, ActivatedRoute, Params, Route, ParamMap, Event} from '@angular/router';
+
 
 
 @Component({
@@ -11,18 +10,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'finalproject-front';
-  show = true;
-  
+  logged:boolean;
+
   
 
-  constructor(   private router: Router) {
+  constructor(){}
+
+ ngOnInit() {
+
 }
- ngOnInit(): void {
-  let currentLocation = window.location.href;
+isLoggedIn($e){
+  this.logged = $e;
 
-  if (currentLocation.includes('home')){
-    this.show = false;
-    console.log(this.show)
-  }
-
-}}
+}
+}

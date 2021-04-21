@@ -3,42 +3,50 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExpertsListComponent } from './pages/experts-list/experts-list.component';
 import { TagsListComponent } from './pages/tags-list/tags-list.component';
 import { CreateExpertComponent } from './pages/create-expert/create-expert.component';
-import { ExpertDetailComponent } from './pages/expert-detail/expert-detail.component';
+import { ExpertDetailComponent } from './views/expert-detail/expert-detail.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-
-
-
+import { AuthGuard } from './guards/auth.guard';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '', 
     pathMatch: 'full',
-    redirectTo: 'experts'
-  },
-  {
-    path: 'experts', 
-    component: ExpertsListComponent,
+    redirectTo:'experts'
   },
   {
     path: 'home', 
-    component: HomePageComponent,
+    pathMatch: 'full',
+    component: HomePageComponent},
+  {
+    path: 'experts', 
+    component: ExpertsListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'expert-detail', 
     component: ExpertDetailComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'tags', 
     component: TagsListComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'new-expert', 
     component: CreateExpertComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'new-tag', 
     component: CreateTagComponent,
+    canActivate: [AuthGuard]
+
   },
 ];
 

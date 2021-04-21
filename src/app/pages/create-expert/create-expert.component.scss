@@ -14,6 +14,10 @@
   }
 }
 
+input{
+  color: lightgray;
+}
+
 .expert-submit-form{ 
     text-align: center;
     margin-top: 7rem;
@@ -25,7 +29,7 @@
   margin: 0 auto;
   margin-top: 5rem;
 }
-input {
+input , select{
   margin-right: 1rem;
 }
 .mat-form-field {
@@ -34,10 +38,7 @@ input {
   text-align: left;
   margin-right: 1rem;
 }
-.ng-untouched.ng-pristine.ng-invalid.ng-star-inserted {
-  position: relative;
-  left: 12rem;
-}
+
 .tags-container{
   margin: 0 auto;
     width: 83%;
@@ -60,7 +61,4 @@ input {
   background-color: #0ed28c;
   color: white;
 
-}
-.new-tag-container{
-  display: flex;
 }

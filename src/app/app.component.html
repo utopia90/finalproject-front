@@ -1,6 +1,9 @@
+  <app-home-page  (isLoggedIn)=isLoggedIn($event) *ngIf="!logged"></app-home-page>
 
-   <mat-sidenav-container class="main-container">
-    <mat-sidenav *ngIf="show" mode="side" opened >
+
+
+   <mat-sidenav-container class="main-container"  *ngIf="logged">
+    <mat-sidenav  mode="side" opened>
       <span> <img class="logo-img" src="./../assets/svg/logo.svg" alt="logo-img"></span>
       <span> <img class="logo-txt" src="./../assets/svg/experts-logo-text.svg" alt="logo-txt"></span>
       <div class="menu-items">

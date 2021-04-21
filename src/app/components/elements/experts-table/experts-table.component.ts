@@ -9,6 +9,8 @@ import {
 } from './experts-table-datasource';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-experts-table',
@@ -25,6 +27,7 @@ export class ExpertsTableComponent implements AfterViewInit {
   nameExpertOption;
   nameTagOption;
   ratingOption;
+  constant : any[];
   state = [{value: 'validado'},{ value: 'por validar'}];
   rating = [{value: '15'},{ value: '25'},{ value: '55'},{ value: '75'},{ value: '100'}];
 
@@ -32,10 +35,11 @@ export class ExpertsTableComponent implements AfterViewInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'estado', 'etiquetas', 'valoracion'];
 
-  constructor(private expertsService: ExpertsService) {}
+  constructor(private expertsService: ExpertsService, private router: Router) {}
   ngOnInit(): void {
     this.expertsService.getAllExperts().subscribe((res: any) => {
       this.blocks = res;
+      this.constant = res;
       this.dataSource = new MatTableDataSource<any>(this.blocks);
 
       console.log(res);
@@ -44,11 +48,7 @@ export class ExpertsTableComponent implements AfterViewInit {
     });
 
   }
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
-  }
+  
 
   filterByState() {
    this.blocks =  this.blocks.filter((x => x.state == this.stateOption))
@@ -68,6 +68,14 @@ export class ExpertsTableComponent implements AfterViewInit {
     this.blocks =  this.blocks.filter((x => x.rating == this.ratingOption))
 
   }
+ refresh(){
+   this.blocks = this.constant;
+ }
 
+ ngAfterViewInit(): void {
+  this.dataSource.sort = this.sort;
+  this.dataSource.paginator = this.paginator;
+  this.table.dataSource = this.blocks;
+}
 
 }

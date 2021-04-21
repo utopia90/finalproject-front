@@ -19,7 +19,7 @@
       <mat-card>
         <mat-card-content>
           <div class="expert-submit-form">
-            <form [formGroup]="loginForm" (submit)="submitLoginForm()">
+            <form [formGroup]="loginForm" (submit)="login()">
             
               <div class="expert-submit-form__block">
               <mat-form-field>
@@ -34,7 +34,7 @@
                 <p class="password-forgot">Has Olvidado la Contraseña?</p>
                 <p class="register-link">Nuevo usuario? <span>Crear Cuenta</span></p>
               </div>
-                <button class="login-btn">Iniciar Sesión</button>
+                <button class="login-btn" type="submit">Iniciar Sesión</button>
             </div>
             </form>
           </div> 

@@ -13,6 +13,9 @@ import {ExpertsService} from './../../services/experts.service';
 export class CreateExpertComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({})
   expert=true;
+  state = [{value: 'validado'},{ value: 'por validar'}];
+  rating = [{value: '15'},{ value: '25'},{ value: '55'},{ value: '75'},{ value: '100'}];
+
 
   constructor(private formBuilder: FormBuilder,private router: Router, private expertService: ExpertsService) { }
 
@@ -31,6 +34,8 @@ export class CreateExpertComponent implements OnInit {
       rating:  ['', Validators.compose([Validators.required, Validators.maxLength(3)])], 
       availability:  ['', Validators.compose([Validators.required, Validators.minLength(2)])], 
     });
+
+    console.log(this.formGroup)
   }
   get tagsArray(): FormArray{
     return this.formGroup.get('tags') as FormArray
@@ -43,7 +48,6 @@ export class CreateExpertComponent implements OnInit {
         name: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])]
       }
     );
-    console.log(tags)
     this.tagsArray.push(tags);
 
   }

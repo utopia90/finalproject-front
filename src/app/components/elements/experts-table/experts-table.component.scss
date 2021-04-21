@@ -9,7 +9,50 @@
   transform: translateY(20%);
 }
 
+ .greenState{
+  color: #4ADEBB;
+
+ }
+
+ .redState{
+  color: #F0CE76;
+
+ }
+ .rating-tag{
+  color: white;
+  text-align: center;
+  height: 2rem;
+  width: 1rem;
+  border-radius: 20px;
+
+  &--strongGreenRating{
+    background: #D66464;
+   }
+
+   &--mediumGreenRating{
+    background: #B1F0A1;
+
+   
+  }
+
+  &--yellowRating{
+   background: #F0CE76;
  
+ 
+  }
+
+  &--brownRating{
+   background: #DEA876;
+  
+ }
+
+ &--redRating{
+  background: #D66464;
+
+ }
+
+ }
+
 
 mat-form-field {
 
@@ -47,4 +90,20 @@ option {
 .mat-form-field-wrapper {
   position: relative;
   height: 2.5rem;
+}
+
+
+img.refresh-svg {
+  width: 1rem;
+  margin-right: 0.2rem;
+}
+button.refresh-btn {
+  border: none;
+  font-weight: 600;
+}
+
+.refresh-container{
+  position: relative;
+  top: 0.5rem;
+  left: 1.5rem;
 }

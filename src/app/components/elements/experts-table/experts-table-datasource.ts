@@ -13,9 +13,13 @@ export interface ExpertsTableItem {
   name: string;
   id: number;
   surname:string;
+  state:string;
+  rating:string;
+
 }
 
 const EXAMPLE_DATA: ExpertsTableItem[] = [
+
 ];
 
 // TODO: replace this with real data from your application

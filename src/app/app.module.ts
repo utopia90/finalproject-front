@@ -1,22 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-
-
-
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExpertDetailComponent } from './pages/expert-detail/expert-detail.component';
+import { ExpertDetailComponent } from './views/expert-detail/expert-detail.component';
 import { CreateExpertComponent } from './pages/create-expert/create-expert.component';
 import { ExpertsListComponent } from './pages/experts-list/experts-list.component';
 import { TagsListComponent } from './pages/tags-list/tags-list.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { ExpertsListPageComponent } from './views/experts-list-page/experts-list-page.component';
-import { TasksListPageComponent } from './views/tasks-list-page/tasks-list-page.component';
 import { ExpertFormComponent } from './components/forms/expert-form/expert-form.component';
-import { HeaderComponent } from './components/elements/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -46,10 +40,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ExpertsListComponent,
     TagsListComponent,
     ErrorPageComponent,
-    ExpertsListPageComponent,
-    TasksListPageComponent,
     ExpertFormComponent,
-    HeaderComponent,
     ExpertsTableComponent,
     TagsTableComponent,
     ToolbarListsComponent,

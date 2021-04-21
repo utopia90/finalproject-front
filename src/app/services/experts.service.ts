@@ -16,4 +16,9 @@ export class ExpertsService {
   register(expert){
     return this.http.post('https://serene-wave-12377.herokuapp.com/api/experts', expert);
   }
+
+  updateExpert(expert){
+  
+    return this.http.put('https://serene-wave-12377.herokuapp.com/api/experts', expert);
+  }
 }
