@@ -9,53 +9,36 @@
   transform: translateY(20%);
 }
 
- .greenState{
-  color: #4ADEBB;
+.greenState {
+  color: #4adebb;
+}
 
- }
+.redState {
+  color: #f0ce76;
+}
 
- .redState{
-  color: #F0CE76;
 
- }
- .rating-tag{
-  color: white;
-  text-align: center;
-  height: 2rem;
-  width: 1rem;
-  border-radius: 20px;
+.rating-tag--strongGreenRating {
+  background: #d66464;
+}
 
-  &--strongGreenRating{
-    background: #D66464;
-   }
+.rating-tag--mediumGreenRating {
+  background: #b1f0a1;
+}
 
-   &--mediumGreenRating{
-    background: #B1F0A1;
+.rating-tag--yellowRating {
+  background: #f0ce76;
+}
 
-   
-  }
+.rating-tag--brownRating {
+  background: #dea876;
+}
 
-  &--yellowRating{
-   background: #F0CE76;
- 
- 
-  }
-
-  &--brownRating{
-   background: #DEA876;
-  
- }
-
- &--redRating{
-  background: #D66464;
-
- }
-
- }
-
+.rating-tag--redRating {
+  background: #d66464;
+}
 
 mat-form-field {
-
   position: relative;
   top: 1.2rem;
 }
@@ -92,7 +75,6 @@ option {
   height: 2.5rem;
 }
 
-
 img.refresh-svg {
   width: 1rem;
   margin-right: 0.2rem;
@@ -102,8 +84,17 @@ button.refresh-btn {
   font-weight: 600;
 }
 
-.refresh-container{
+.refresh-container {
   position: relative;
   top: 0.5rem;
   left: 1.5rem;
 }
+td.mat-cell.cdk-cell.cdk-column-valoracion.mat-column-valoracion.ng-star-inserted {
+  color: white;
+  padding-left: 20p;
+  text-align: center;
+  width: 0.3rem;
+  border-radius: 20px;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  width: 25%}

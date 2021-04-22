@@ -15,6 +15,7 @@ export class CreateExpertComponent implements OnInit {
   expert=true;
   state = [{value: 'validado'},{ value: 'por validar'}];
   rating = [{value: '15'},{ value: '25'},{ value: '55'},{ value: '75'},{ value: '100'}];
+  availability = [{value: 'mañana'}, {value:'tarde'}];
 
 
   constructor(private formBuilder: FormBuilder,private router: Router, private expertService: ExpertsService) { }

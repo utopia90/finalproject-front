@@ -48,8 +48,9 @@
     </select>
   </mat-form-field>
   <mat-form-field>
-    <input id="availability" type="String" matInput placeholder="DISPONIBILIDAD:" formControlName="availability" />
-  </mat-form-field>
+    <select id="state" matNativeControl required  formControlName="availability" placeholder="DISPONIBILIDAD:">
+      <option *ngFor="let option of availability" [value]="option.value" >{{option.value}}</option>
+    </select>  </mat-form-field>
 
 
   <button class="form-btn" type="submit">

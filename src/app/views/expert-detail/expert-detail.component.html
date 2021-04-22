@@ -11,16 +11,35 @@
         <hr />
         <div class="middle-block">
           <div class="middle-block-container">
-            <p>Disponibilidad:</p>
-            <p>{{ expert.availability }}</p>
+            <form [formGroup]="formGroup">
+
+              <mat-form-field placeholder="disponibilidad:">
+                  <select (change)="updateAvailability()" id="state" matNativeControl required  formControlName="availability" placeholder="disponibilidad:">
+                    <option *ngFor="let option of availability" [value]="option.value" >{{option.value}}</option>
+                  </select> 
+          </mat-form-field>
+        </form>
+            
           </div>
           <div class="middle-block-container">
-            <p>Estado:</p>
-            <p>{{ expert.state }}</p>
+            <form [formGroup]="formGroup">
+ 
+            <mat-form-field>
+              <select id="state" (change)="updateState()" matNativeControl required  formControlName="state" placeholder="estado:">
+                <option *ngFor="let option of state" [value]="option.value"  >{{option.value}}</option>
+              </select>
+            </mat-form-field>
+          </form>
           </div>
           <div class="middle-block-container">
-            <p>Valoración:</p>
-            <p>{{ expert.rating }}</p>
+            <form [formGroup]="formGroup">
+
+            <mat-form-field>
+              <select (change)="updateRating()"  id="rating" matNativeControl required  formControlName="rating" placeholder="puntuación:">
+                <option *ngFor="let option of rating" [value]="option.value">{{option.value}}</option>
+              </select>
+            </mat-form-field>
+            </form>
           </div>
         </div>
         <div class="bottom-block">
@@ -118,4 +137,5 @@
       </div>
     </mat-card-content>
   </mat-card>
+
 </div>
