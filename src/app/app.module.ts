@@ -30,6 +30,7 @@ import { ToolbarListsComponent } from './components/elements/toolbar-lists/toolb
 import { ToolbarBackComponent } from './components/elements/toolbar-back/toolbar-back.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ToolbarBackComponent,
     CreateTagComponent,
     HomePageComponent,
+    ExpertRemarksComponent,
   ],
   imports: [
     BrowserModule,

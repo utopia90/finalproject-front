@@ -1,0 +1,40 @@
+.remarks-block {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &:nth-child(2) {
+      display: flex;
+    }
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+    width: 32%;
+    }
+    &--left, &--right{
+          display: flex;
+          flex-direction: column;
+    }
+  }
+
+  &_input{
+    background: transparent;
+    border: 0.4px solid lightgray;
+    height: 2rem;
+
+  }
+}
+
+label {
+    color: lightgray;
+}
+
+mat-card.mat-card.mat-focus-indicator {
+  width: 93%;
+  margin: 0 auto;
+}
+
+
+

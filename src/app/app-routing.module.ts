@@ -6,6 +6,7 @@ import { CreateExpertComponent } from './pages/create-expert/create-expert.compo
 import { ExpertDetailComponent } from './views/expert-detail/expert-detail.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import {ExpertRemarksComponent} from './pages/expert-remarks/expert-remarks.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
 
@@ -39,6 +40,12 @@ const routes: Routes = [
   {
     path: 'new-expert', 
     component: CreateExpertComponent,
+    canActivate: [AuthGuard]
+
+  },
+  {
+    path: 'expert-remarks', 
+    component: ExpertRemarksComponent,
     canActivate: [AuthGuard]
 
   },
