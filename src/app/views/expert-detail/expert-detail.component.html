@@ -3,12 +3,17 @@
     <mat-card-content>
       <div class="expert-block-main">
         <div class="upper-block">
+
           <mat-card-title
             >{{ expert.name }} {{ expert.surname }}</mat-card-title
           >
           <mat-card-subtitle>DNI: {{ expert.dni }}</mat-card-subtitle>
         </div>
-        <hr />
+          <div class="upper-block__links">
+            <span class="upper-block__links__btn">Datos Generales</span>
+            <span class="upper-block__links__btn">Observaciones</span>
+          </div>
+          <hr>
         <div class="middle-block">
           <div class="middle-block-container">
             <form [formGroup]="formGroup">
@@ -129,8 +134,9 @@
 
               </form>
 
-            <div *ngFor="let tag of expert.tags">
-              {{ tag.name }}
+            <div class="expert-tags__container" *ngFor="let tag of expert.tags, let i = index">
+              <span class="expert-tags__container__tag" *ngIf="tag.name.length > 0">{{ tag.name }} <span (click)="removeTag(tag.id)" class="expert-tags__container__tag-delete">x</span>
+              </span>
             </div>
           </div>
         </div>

@@ -95,6 +95,12 @@ td.mat-cell.cdk-cell.cdk-column-valoracion.mat-column-valoracion.ng-star-inserte
   text-align: center;
   width: 0.3rem;
   border-radius: 20px;
+  cursor: pointer;
 }
 th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   width: 25%}
+
+  tr.mat-row.cdk-row.ng-star-inserted {
+    cursor: pointer;
+  }
+

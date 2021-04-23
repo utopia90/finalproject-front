@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExpertsService } from 'src/app/services/experts.service';
+import { TagsService } from 'src/app/services/tags.service';
 
 @Component({
   selector: 'app-expert-detail',
@@ -24,7 +25,8 @@ export class ExpertDetailComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private expertService: ExpertsService
+    private expertService: ExpertsService,
+    private tagsService: TagsService,
   ) {
     this.expert = this.router?.getCurrentNavigation().extras.state.expert;
   }
@@ -111,7 +113,16 @@ export class ExpertDetailComponent implements OnInit {
       }
     });
   }
-  removeTag(index: number) {
-    this.tagsArray.removeAt(index);
+  removeTag(id) {
+    this.tagsService.deleteExpertTag(id).subscribe((response) => {
+      window.alert("tag eliminada")
   }
-}
+
+    )
+    for (let i = 0; i < this.formGroup.value.tags.length; i++) {
+      if (this.formGroup.value.tags[i].id == id ) {
+        this.formGroup.value.tags.splice(i,1);
+      }}
+  }
+   
+  }

@@ -128,7 +128,9 @@ button.tag-btn {
 .expert-tags{
   background-color: lightgray;
 }
-
+.tags-hide{
+  display: none;
+}
 .expert-tags__container{
   display: inline-flex;
     margin-top: 1rem;
@@ -144,4 +146,7 @@ button.tag-btn {
   &__tag-delete{
     cursor: pointer;
   }
+}
+.mat-card-subtitle:not(:first-child) {
+  margin-top: 1rem;
 }

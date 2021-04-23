@@ -18,6 +18,6 @@ export class TagsService {
     return this.http.post('https://serene-wave-12377.herokuapp.com/api/tags', tag);
   }
   deleteExpertTag(id){
-    return this.http.delete('https://serene-wave-12377.herokuapp.com/api/tags/', id);
+    return this.http.delete(`https://serene-wave-12377.herokuapp.com/api/tags/${id}`);
   }
 }
