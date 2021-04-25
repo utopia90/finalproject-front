@@ -9,7 +9,7 @@ export class ExpertRemarksComponent implements OnInit {
 
   reasons = [{value: 'bajo rendimiento'}, {value:'sin disponibilidad'}, {value:'otros'}];
 
-
+  expert_info=true;
   constructor() { }
 
   ngOnInit(): void {

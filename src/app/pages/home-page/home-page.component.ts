@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit {
     console.log(logged)
 
     window.alert(
-      'Para loguearse, tienes que introducir el correo: eve.holt@reqres.in, y en password: cityslicka'
+      'Para loguearse, tienes que introducir el correo: admin, y en password: admin'
     );
     this.loginForm = this.formBuilder.group({
       mail: [

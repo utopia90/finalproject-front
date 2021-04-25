@@ -48,7 +48,7 @@
         border-radius: 8px;
         box-sizing: border-box;
         width: 10rem;
-        height: 3.5rem;
+        height: 3rem;
         margin: 0 auto;
 
         &:hover{
@@ -102,4 +102,10 @@
 }
 span.logo-container {
   margin-right: 0.5rem;
+}
+img.logo-img {
+  width: 2rem;
+}
+img.txt-logo {
+  width: 7rem;
 }

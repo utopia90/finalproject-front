@@ -11,6 +11,7 @@ import { TagsService } from 'src/app/services/tags.service';
 })
 export class ExpertDetailComponent implements OnInit {
   expert;
+  expert_info = true;
   formGroup: FormGroup = new FormGroup({});
   availability = [{ value: 'mañana' }, { value: 'tarde' }];
   state = [{ value: 'validado' }, { value: 'por validar' }];
@@ -26,7 +27,7 @@ export class ExpertDetailComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private expertService: ExpertsService,
-    private tagsService: TagsService,
+    private tagsService: TagsService
   ) {
     this.expert = this.router?.getCurrentNavigation().extras.state.expert;
   }
@@ -65,7 +66,7 @@ export class ExpertDetailComponent implements OnInit {
     });
     this.tagsArray.push(tags);
 
-    for (let i = 0; i < this.formGroup.value.tags.length; i++) {
+    for (let i = 0; i <= this.formGroup.value.tags.length; i++) {
       if (this.formGroup.value.tags[i].name.length > 0) {
         this.expert.tags.push(this.formGroup.value.tags[i].name);
 
@@ -113,16 +114,9 @@ export class ExpertDetailComponent implements OnInit {
       }
     });
   }
-  removeTag(id) {
+  removeTag(id, i) {
     this.tagsService.deleteExpertTag(id).subscribe((response) => {
-      window.alert("tag eliminada")
-  }
-
-    )
-    for (let i = 0; i < this.formGroup.value.tags.length; i++) {
-      if (this.formGroup.value.tags[i].id == id ) {
-        this.formGroup.value.tags.splice(i,1);
-      }}
-  }
-   
-  }
+      window.alert('tag eliminada');
+    });
+    this.expert.tags.splice(i,1)}
+}

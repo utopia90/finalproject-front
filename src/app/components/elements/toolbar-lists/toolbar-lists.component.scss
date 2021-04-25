@@ -28,6 +28,8 @@
 .toolbar-txt{
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 0.3rem;
 }
 p{
     font-size: 13px;

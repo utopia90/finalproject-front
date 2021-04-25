@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ToolbarBackComponent implements OnInit {
   @Input()expert=false;
   @Input()tag=false;
+  @Input()expert_info=false;
 
   constructor() { }
 

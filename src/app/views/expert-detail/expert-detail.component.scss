@@ -11,6 +11,7 @@
        color: #0ED28C;
        margin-right: 2rem;
        padding: 0.5rem;
+       cursor: pointer;
 
        &:hover{
          background-color: #D9FFE1;
@@ -128,9 +129,7 @@ button.tag-btn {
 .expert-tags{
   background-color: lightgray;
 }
-.tags-hide{
-  display: none;
-}
+
 .expert-tags__container{
   display: inline-flex;
     margin-top: 1rem;

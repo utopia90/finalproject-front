@@ -1,3 +1,21 @@
 span {
     font-size: 12px;
 }
+
+mat-toolbar.mat-toolbar.mat-toolbar-single-row {
+    background: white;
+}
+span {
+    cursor: pointer;
+
+}
+
+span {
+    >span{
+        &:hover{
+            color: #0ED28C;     
+          }
+    }
+}
+    
+   

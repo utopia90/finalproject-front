@@ -33,6 +33,7 @@
 }
 .experts-item {
   display: flex;
+  margin-bottom: 1rem;
 }
 .tags-item {
   display: flex;
@@ -56,7 +57,7 @@
 .menu-items{
     display: flex;
     flex-direction: column;
-    margin-left: 3rem;
+    margin-left: 1rem;
     margin-top: 2rem;
 }
 img.tags-logo {
