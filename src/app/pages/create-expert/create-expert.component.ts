@@ -118,6 +118,7 @@ export class CreateExpertComponent implements OnInit {
       this.formGroup.value.surname &&
       this.formGroup.value.phone &&
       this.formGroup.value.mail&&
+      this.formGroup.value.mail.match('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')&&
       this.formGroup.value.rating&&
       this.formGroup.value.dni&&
       this.formGroup.value.linkedln&&
