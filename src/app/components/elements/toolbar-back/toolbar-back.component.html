@@ -1,6 +1,14 @@
 <mat-toolbar>
-   <span *ngIf="expert"><span  routerLink="/experts">Volver a lista de expertos</span><span  style="font-weight: bold"> > Nuevo Experto</span></span>
-   <span *ngIf="tag"><span  routerLink="/tags">Volver a lista de etiquetas</span><span style="font-weight: bold"> > Nueva Etiqueta</span></span>
-   <span *ngIf="expert_info"><span  routerLink="/experts">Volver a lista de expertos</span><span  style="font-weight: bold"> > Información de Experto</span></span>
-
-  </mat-toolbar>
+  <span *ngIf="expert"
+    ><span routerLink="/experts">Volver a lista de expertos</span
+    ><span style="font-weight: bold"> > Nuevo Experto</span></span
+  >
+  <span *ngIf="tag"
+    ><span routerLink="/tags">Volver a lista de etiquetas</span
+    ><span style="font-weight: bold"> > Nueva Etiqueta</span></span
+  >
+  <span *ngIf="expert_info"
+    ><span routerLink="/experts">Volver a lista de expertos</span
+    ><span style="font-weight: bold"> > Información de Experto</span></span
+  >
+</mat-toolbar>

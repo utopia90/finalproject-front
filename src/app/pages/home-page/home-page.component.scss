@@ -33,15 +33,14 @@
         font-weight: bold;
         font-size: 38px;
         line-height: 58px;
-        
       }
-    
+
       &__subtitle {
         font-size: 16px;
         font-weight: 500;
       }
 
-      &__btn{
+      &__btn {
         background-color: transparent;
         color: white;
         border: 1px solid white;
@@ -51,7 +50,7 @@
         height: 3rem;
         margin: 0 auto;
 
-        &:hover{
+        &:hover {
           background-color: white;
           color: #0ed28c;
           border: none;
@@ -75,8 +74,6 @@
 }
 .login-form {
   width: 30rem;
-
-
 }
 .login-btn {
   background-color: #0ed28c;
@@ -86,7 +83,7 @@
   min-width: 10rem;
   max-height: 3rem;
 
-  &:hover{
+  &:hover {
     background-color: white;
     color: #0ed28c;
     border: 1px solid #0ed28c;

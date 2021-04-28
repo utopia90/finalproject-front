@@ -21,9 +21,8 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    var logged = sessionStorage.getItem("loggedIn")
-    console.log(logged)
+    var logged = sessionStorage.getItem('loggedIn');
+    console.log(logged);
 
     window.alert(
       'Para loguearse, tienes que introducir el correo: admin, y en password: admin'

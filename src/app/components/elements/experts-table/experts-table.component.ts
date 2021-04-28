@@ -27,10 +27,15 @@ export class ExpertsTableComponent implements AfterViewInit {
   nameExpertOption;
   nameTagOption;
   ratingOption;
-  constant : any[];
-  state = [{value: 'validado'},{ value: 'por validar'}];
-  rating = [{value: '15'},{ value: '25'},{ value: '55'},{ value: '75'},{ value: '100'}];
-
+  constant: any[];
+  state = [{ value: 'validado' }, { value: 'por validar' }];
+  rating = [
+    { value: '15' },
+    { value: '25' },
+    { value: '55' },
+    { value: '75' },
+    { value: '100' },
+  ];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'estado', 'etiquetas', 'valoracion'];
@@ -46,36 +51,34 @@ export class ExpertsTableComponent implements AfterViewInit {
       let dataLength = res.length;
       localStorage.setItem('expertsLength', dataLength);
     });
-
   }
-  
 
   filterByState() {
-   this.blocks =  this.blocks.filter((x => x.state == this.stateOption))
+    this.blocks = this.blocks.filter((x) => x.state == this.stateOption);
   }
 
-  filterByNameExpert(){
-    this.blocks =  this.blocks.filter((x => x.name.toLowerCase().includes(this.nameExpertOption.toLowerCase())))
-
-  }
-  
-  filterByNameTag(){
-   this.
-   blocks =  this.blocks.filter((x => x.tags.some((tag) => tag.name.includes(this.nameTagOption)))) 
+  filterByNameExpert() {
+    this.blocks = this.blocks.filter((x) =>
+      x.name.toLowerCase().includes(this.nameExpertOption.toLowerCase())
+    );
   }
 
-  filterByRating(){
-    this.blocks =  this.blocks.filter((x => x.rating == this.ratingOption))
-
+  filterByNameTag() {
+    this.blocks = this.blocks.filter((x) =>
+      x.tags.some((tag) => tag.name.includes(this.nameTagOption))
+    );
   }
- refresh(){
-   this.blocks = this.constant;
- }
 
- ngAfterViewInit(): void {
-  this.dataSource.sort = this.sort;
-  this.dataSource.paginator = this.paginator;
-  this.table.dataSource = this.blocks;
-}
+  filterByRating() {
+    this.blocks = this.blocks.filter((x) => x.rating == this.ratingOption);
+  }
+  refresh() {
+    this.blocks = this.constant;
+  }
 
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.blocks;
+  }
 }

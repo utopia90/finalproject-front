@@ -1,28 +1,37 @@
 <app-toolbar-back [expert_info]="expert_info"></app-toolbar-back>
 <mat-card>
-
-<mat-card-content>
+  <mat-card-content>
     <div class="remarks-block">
-        <div class="remarks-block__item">
-            <label for="remarks" class="remarks-label">OBSERVACIONES</label>
-            <input type="text" id="remarks"class="remarks-block_input" placeholder="escribe algo...">
+      <div class="remarks-block__item">
+        <label for="remarks" class="remarks-label">OBSERVACIONES</label>
+        <input
+          type="text"
+          id="remarks"
+          class="remarks-block_input"
+          placeholder="escribe algo..."
+        />
+      </div>
+      <div class="remarks-block__item__bottom">
+        <div class="remarks-block__item--left">
+          <label for="reason" class="remarks-label">MOTIVO DE DESCARTE</label>
+          <select id="reason" class="remarks-block_input">
+            <option *ngFor="let option of reasons" [value]="option.value">
+              {{ option.value }}
+            </option>
+          </select>
         </div>
-        <div class="remarks-block__item__bottom">
-            <div class="remarks-block__item--left">
-                <label for="reason" class="remarks-label">MOTIVO DE DESCARTE</label>
-                <select id="reason"  class="remarks-block_input">
-                    <option *ngFor="let option of reasons" [value]="option.value" >{{option.value}}</option>
-                  </select>
-            </div>
-            <div class="remarks-block__item--right">
-                <label for="reason-detail" class="remarks-label">ESPECIFICA EL MOTIVO</label>
-                <input type="text" id="reason-detail"class="remarks-block_input" placeholder="escribe algo..">
-            </div>
-
+        <div class="remarks-block__item--right">
+          <label for="reason-detail" class="remarks-label"
+            >ESPECIFICA EL MOTIVO</label
+          >
+          <input
+            type="text"
+            id="reason-detail"
+            class="remarks-block_input"
+            placeholder="escribe algo.."
+          />
         </div>
-
-       
+      </div>
     </div>
-</mat-card-content>
-
+  </mat-card-content>
 </mat-card>

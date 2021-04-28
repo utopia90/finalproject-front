@@ -6,38 +6,32 @@ import { TagsTableDataSource, TagsTableItem } from './tags-table-datasource';
 import { TagsService } from '../../../services/tags.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-tags-table',
   templateUrl: './tags-table.component.html',
-  styleUrls: ['./tags-table.component.scss']
+  styleUrls: ['./tags-table.component.scss'],
 })
 export class TagsTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<TagsTableItem>;
   dataSource;
-  blocks: [
-    {"id": ''},
-    {"name": ''}
-  ];
-
+  blocks: [{ id: '' }, { name: '' }];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
   constructor(private tagsService: TagsService) {
-    this.dataSource = new TagsTableDataSource()
+    this.dataSource = new TagsTableDataSource();
   }
   ngOnInit(): void {
     this.tagsService.getAllTags().subscribe((res: any) => {
-        this.blocks = res;
-        this.dataSource = new MatTableDataSource<any>(this.blocks); 
+      this.blocks = res;
+      this.dataSource = new MatTableDataSource<any>(this.blocks);
 
-        let dataLength = res.length;
-        localStorage.setItem('tagLength', dataLength); 
-     });
- 
+      let dataLength = res.length;
+      localStorage.setItem('tagLength', dataLength);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -45,6 +39,4 @@ export class TagsTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
-
- 
 }

@@ -6,59 +6,55 @@ import { CreateExpertComponent } from './pages/create-expert/create-expert.compo
 import { ExpertDetailComponent } from './views/expert-detail/expert-detail.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import {ExpertRemarksComponent} from './pages/expert-remarks/expert-remarks.component';
+import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     pathMatch: 'full',
-    redirectTo:'experts'
+    redirectTo: 'experts',
   },
   {
-    path: 'home', 
+    path: 'home',
     pathMatch: 'full',
-    component: HomePageComponent},
+    component: HomePageComponent,
+  },
   {
-    path: 'experts', 
+    path: 'experts',
     component: ExpertsListComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: 'expert-detail', 
+    path: 'expert-detail',
     component: ExpertDetailComponent,
-    canActivate: [AuthGuard]
-
+    canActivate: [AuthGuard],
   },
   {
-    path: 'tags', 
+    path: 'tags',
     component: TagsListComponent,
-    canActivate: [AuthGuard]
-
+    canActivate: [AuthGuard],
   },
   {
-    path: 'new-expert', 
+    path: 'new-expert',
     component: CreateExpertComponent,
-    canActivate: [AuthGuard]
-
+    canActivate: [AuthGuard],
   },
   {
-    path: 'expert-remarks', 
+    path: 'expert-remarks',
     component: ExpertRemarksComponent,
-    canActivate: [AuthGuard]
-
+    canActivate: [AuthGuard],
   },
   {
-    path: 'new-tag', 
+    path: 'new-tag',
     component: CreateTagComponent,
-    canActivate: [AuthGuard]
-
+    canActivate: [AuthGuard],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -5,47 +5,74 @@
     <mat-card-content>
       <div class="expert-block-main">
         <div class="upper-block">
-
           <mat-card-title
             >{{ expert.name }} {{ expert.surname }}</mat-card-title
           >
           <mat-card-subtitle>DNI: {{ expert.dni }}</mat-card-subtitle>
         </div>
-          <div class="upper-block__links">
-            <span class="upper-block__links__btn">Datos Generales</span>
-            <span class="upper-block__links__btn" routerLink="/expert-remarks">Observaciones</span>
-          </div>
-          <hr>
+        <div class="upper-block__links">
+          <span class="upper-block__links__btn">Datos Generales</span>
+          <span class="upper-block__links__btn" routerLink="/expert-remarks"
+            >Observaciones</span
+          >
+        </div>
+        <hr />
         <div class="middle-block">
           <div class="middle-block-container">
             <form [formGroup]="formGroup">
-
               <mat-form-field placeholder="disponibilidad:">
-                  <select (change)="updateAvailability()" id="state" matNativeControl required  formControlName="availability" placeholder="disponibilidad:">
-                    <option *ngFor="let option of availability" [value]="option.value" >{{option.value}}</option>
-                  </select> 
-          </mat-form-field>
-        </form>
-            
+                <select
+                  (change)="updateAvailability()"
+                  id="state"
+                  matNativeControl
+                  required
+                  formControlName="availability"
+                  placeholder="disponibilidad:"
+                >
+                  <option
+                    *ngFor="let option of availability"
+                    [value]="option.value"
+                  >
+                    {{ option.value }}
+                  </option>
+                </select>
+              </mat-form-field>
+            </form>
           </div>
           <div class="middle-block-container">
             <form [formGroup]="formGroup">
- 
-            <mat-form-field>
-              <select id="state" (change)="updateState()" matNativeControl required  formControlName="state" placeholder="estado:">
-                <option *ngFor="let option of state" [value]="option.value"  >{{option.value}}</option>
-              </select>
-            </mat-form-field>
-          </form>
+              <mat-form-field>
+                <select
+                  id="state"
+                  (change)="updateState()"
+                  matNativeControl
+                  required
+                  formControlName="state"
+                  placeholder="estado:"
+                >
+                  <option *ngFor="let option of state" [value]="option.value">
+                    {{ option.value }}
+                  </option>
+                </select>
+              </mat-form-field>
+            </form>
           </div>
           <div class="middle-block-container">
             <form [formGroup]="formGroup">
-
-            <mat-form-field>
-              <select (change)="updateRating()"  id="rating" matNativeControl required  formControlName="rating" placeholder="puntuación:">
-                <option *ngFor="let option of rating" [value]="option.value">{{option.value}}</option>
-              </select>
-            </mat-form-field>
+              <mat-form-field>
+                <select
+                  (change)="updateRating()"
+                  id="rating"
+                  matNativeControl
+                  required
+                  formControlName="rating"
+                  placeholder="puntuación:"
+                >
+                  <option *ngFor="let option of rating" [value]="option.value">
+                    {{ option.value }}
+                  </option>
+                </select>
+              </mat-form-field>
             </form>
           </div>
         </div>
@@ -121,23 +148,49 @@
           <div class="contact-block__tags">
             <div class="contact-block-title">ETIQUETAS</div>
 
-              <form [formGroup]="formGroup" (submit)="addTag()">
-                <div formArrayName="tags" class="tags-container">
-
-                  <div class="new-tag-container" *ngFor="let tag of tagsArray.controls; let i = index" formGroupName="{{i}}">
-                    <mat-form-field>
-                      <input matInput type="string" matInput placeholder="Tag" formControlName="name"/>
-                    </mat-form-field>
-                    <button class="tag-delete-btn"type='button'(click)="removeTag(i)">x</button>
-                  </div>
-                  <button class="tag-btn"type='button'(click)="addTag()">Añadir etiquetas</button>
-              
+            <form [formGroup]="formGroup" (submit)="addTag()">
+              <div formArrayName="tags" class="tags-container">
+                <div
+                  class="new-tag-container"
+                  *ngFor="let tag of tagsArray.controls; let i = index"
+                  formGroupName="{{ i }}"
+                >
+                  <mat-form-field>
+                    <input
+                      matInput
+                      type="string"
+                      matInput
+                      placeholder="Tag"
+                      formControlName="name"
+                    />
+                  </mat-form-field>
+                  <button
+                    class="tag-delete-btn"
+                    type="button"
+                    (click)="removeTag(i)"
+                  >
+                    x
+                  </button>
                 </div>
+                <button class="tag-btn" type="button" (click)="addTag()">
+                  Añadir etiquetas
+                </button>
+              </div>
+            </form>
 
-              </form>
-
-            <div class="expert-tags__container" *ngFor="let tag of expert.tags, let i = index">
-              <span class="expert-tags__container__tag" *ngIf="tag.name.length > 0">{{ tag.name }} <span (click)="removeTag(tag.id)" class="expert-tags__container__tag-delete">x</span>
+            <div
+              class="expert-tags__container"
+              *ngFor="let tag of expert.tags; let i = index"
+            >
+              <span
+                class="expert-tags__container__tag"
+                *ngIf="tag.name.length > 0"
+                >{{ tag.name }}
+                <span
+                  (click)="removeTag(tag.id)"
+                  class="expert-tags__container__tag-delete"
+                  >x</span
+                >
               </span>
             </div>
           </div>
@@ -145,3 +198,4 @@
       </div>
     </mat-card-content>
   </mat-card>
+</div>

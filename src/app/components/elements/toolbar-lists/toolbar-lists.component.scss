@@ -1,37 +1,33 @@
+.create-btn {
+  height: 40px;
+  position: absolute;
+  right: 7rem;
+  top: 1rem;
+  width: 187.5px;
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px, 20px, 10px, 20px;
 
-  .create-btn {
-    height: 40px;
-    position: absolute;
-    right: 7rem;
-    top: 1rem;
-    width:187.5px;
-    height: 2.5rem;
-    background-color: transparent;
-    border-radius:5px;
-    padding:10px, 20px, 10px, 20px;
-    
-    border: 0.4px solid #0ED28C;
-    background-color: #0ED28C;
-    color: white;
-;
-
-  &:hover{
-    color: #0ED28C;
+  border: 0.4px solid #0ed28c;
+  background-color: #0ed28c;
+  color: white;
+  &:hover {
+    color: #0ed28c;
     background-color: white;
- 
   }
 }
 .mat-toolbar.mat-toolbar.mat-toolbar-single-row {
-    background-color: white;
+  background-color: white;
 }
 
-.toolbar-txt{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 0.3rem;
+.toolbar-txt {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 0.3rem;
 }
-p{
-    font-size: 13px;
-    font-weight: lighter;
+p {
+  font-size: 13px;
+  font-weight: lighter;
 }

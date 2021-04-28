@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,16 +22,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { TagsTableComponent } from './components/elements/tags-table/tags-table.component';
 import { ToolbarListsComponent } from './components/elements/toolbar-lists/toolbar-lists.component';
 import { ToolbarBackComponent } from './components/elements/toolbar-back/toolbar-back.component';
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.component';
-
 
 @NgModule({
   declarations: [
@@ -69,9 +68,9 @@ import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.co
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

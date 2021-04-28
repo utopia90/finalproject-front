@@ -118,5 +118,6 @@ export class ExpertDetailComponent implements OnInit {
     this.tagsService.deleteExpertTag(id).subscribe((response) => {
       window.alert('tag eliminada');
     });
-    this.expert.tags.splice(i,1)}
+    this.expert.tags.splice(i, 1);
+  }
 }

@@ -11,9 +11,7 @@ export interface TagsTableItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: TagsTableItem[] = [
-
-];
+const EXAMPLE_DATA: TagsTableItem[] = [];
 
 /**
  * Data source for the TagsTable view. This class should
@@ -38,12 +36,19 @@ export class TagsTableDataSource extends DataSource<TagsTableItem> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
-      return merge(observableOf(this.data), this.paginator.page, this.sort.sortChange)
-        .pipe(map(() => {
-          return this.getPagedData(this.getSortedData([...this.data ]));
-        }));
+      return merge(
+        observableOf(this.data),
+        this.paginator.page,
+        this.sort.sortChange
+      ).pipe(
+        map(() => {
+          return this.getPagedData(this.getSortedData([...this.data]));
+        })
+      );
     } else {
-      throw Error('Please set the paginator and sort on the data source before connecting.');
+      throw Error(
+        'Please set the paginator and sort on the data source before connecting.'
+      );
     }
   }
 
@@ -78,15 +83,22 @@ export class TagsTableDataSource extends DataSource<TagsTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        default: return 0;
+        case 'name':
+          return compare(a.name, b.name, isAsc);
+        case 'id':
+          return compare(+a.id, +b.id, isAsc);
+        default:
+          return 0;
       }
     });
   }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number, b: string | number, isAsc: boolean): number {
+function compare(
+  a: string | number,
+  b: string | number,
+  isAsc: boolean
+): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

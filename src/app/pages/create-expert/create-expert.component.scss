@@ -8,31 +8,32 @@
   color: white;
   border: none;
 
-  &:hover{
+  &:hover {
     background-color: lightgray;
-    color:#0ed28c;
+    color: #0ed28c;
   }
 }
 
-input{
+input {
   color: gray;
 }
 form {
   margin-top: 2rem;
 }
 
-.expert-submit-form{ 
-    text-align: center;
-    margin-top: 7rem;
-    width: 80%;
-    margin: 0 auto;
+.expert-submit-form {
+  text-align: center;
+  margin-top: 7rem;
+  width: 80%;
+  margin: 0 auto;
 }
 .mat-card.mat-card.mat-focus-indicator {
   width: 80%;
   margin: 0 auto;
   margin-top: 5rem;
 }
-input , select{
+input,
+select {
   margin-right: 1rem;
 }
 .mat-form-field {
@@ -42,26 +43,25 @@ input , select{
   margin-right: 1rem;
 }
 
-.tags-container{
+.tags-container {
   margin: 0 auto;
-    width: 83%;
+  width: 83%;
 }
 
-.tag-btn{
+.tag-btn {
   align-self: center;
-    min-width: 36rem;
-    min-height: 2rem;
-    border-top: none;
-    border-right: none;
-    border-left: none;
+  min-width: 36rem;
+  min-height: 2rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
 
-.tag-delete-btn{
+.tag-delete-btn {
   max-height: 2rem;
   min-width: 2rem;
   align-self: center;
   border: none;
   background-color: #0ed28c;
   color: white;
-
 }

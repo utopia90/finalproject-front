@@ -21,7 +21,7 @@ export class CreateExpertComponent implements OnInit {
     { value: '100' },
   ];
   availability = [{ value: 'mañana' }, { value: 'tarde' }];
-  tagsContainer=[];
+  tagsContainer = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -90,8 +90,7 @@ export class CreateExpertComponent implements OnInit {
     return this.formGroup.get('tags') as FormArray;
   }
 
-  addTag() { 
-    
+  addTag() {
     let tags = this.formBuilder.group({
       name: [
         '',
@@ -102,29 +101,28 @@ export class CreateExpertComponent implements OnInit {
         ]),
       ],
     });
-    console.log(tags)
-    this.tagsArray.push(tags)
+    console.log(tags);
+    this.tagsArray.push(tags);
   }
-
 
   removeTag(index: number) {
     this.tagsArray.removeAt(index);
   }
 
   submitRegisterForm() {
-
     if (
       this.formGroup.value.name &&
       this.formGroup.value.surname &&
       this.formGroup.value.phone &&
-      this.formGroup.value.mail&&
-      this.formGroup.value.mail.match('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')&&
-      this.formGroup.value.rating&&
-      this.formGroup.value.dni&&
-      this.formGroup.value.linkedln&&
-      this.tagsArray.value.length >= 1&&
+      this.formGroup.value.mail &&
+      this.formGroup.value.mail.match(
+        '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
+      ) &&
+      this.formGroup.value.rating &&
+      this.formGroup.value.dni &&
+      this.formGroup.value.linkedln &&
+      this.tagsArray.value.length >= 1 &&
       this.formGroup.value.availability
-
     ) {
       this.expertService
         .register(this.formGroup.value)
