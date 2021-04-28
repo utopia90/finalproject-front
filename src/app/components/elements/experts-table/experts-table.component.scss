@@ -12,7 +12,13 @@
 .greenState {
   color: #4adebb;
 }
-
+span.ng-star-inserted {
+  background-color: lightgray;
+  min-width: 5rem;
+  border-radius: 31px;
+  text-align: center;
+  padding: 0.6rem;
+}
 .redState {
   color: #f0ce76;
 }
