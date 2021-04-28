@@ -134,7 +134,7 @@ export class CreateExpertComponent implements OnInit {
           }
         });
     } else {
-      alert('por favor, rellene todos los campos');
+      alert('por favor, rellene todos los campos correctamente');
     }
   }
 }
