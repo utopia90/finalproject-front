@@ -1,3 +1,14 @@
+
+
+
+  <input
+  placeholder="Filtra por nombre etiqueta"
+  name="nameTag"
+  class="form-control"
+  [(ngModel)]="nameTagOption"
+  (keyup)="filterByNameTag()"
+/>
+
 <div class="mat-elevation-z8">
   <table
     [dataSource]="blocks"
@@ -17,18 +28,27 @@
         </tr>
       </th>
     </ng-container>
+  
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
+    
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Etiqueta</th>
       <th mat-cell *matCellDef="let row">
+        <div class="tag-btn">
+
         <tr>
           {{
             row.name
           }}
         </tr>
+        <button class="tag-delete-btn" (click)="removeTag(row.id)">Delete Tag</button>
+      </div>
+
       </th>
     </ng-container>
+
+   
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

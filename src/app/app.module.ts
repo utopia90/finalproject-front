@@ -31,6 +31,7 @@ import { ToolbarBackComponent } from './components/elements/toolbar-back/toolbar
 import { CreateTagComponent } from './pages/create-tag/create-tag.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.co
     CreateTagComponent,
     HomePageComponent,
     ExpertRemarksComponent,
+    RegisterPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,41 @@
+<mat-sidenav-container class="main-container">
+  <mat-sidenav mode="side" opened>
+    <span>
+      <img class="logo-img" src="./../assets/svg/logo.svg" alt="logo-img"
+    /></span>
+    <span>
+      <img
+        class="logo-txt"
+        src="./../assets/svg/experts-logo-text.svg"
+        alt="logo-txt"
+    /></span>
+    <div class="menu-items">
+      <div class="experts-item">
+        <span
+          ><img
+            src="./../assets/svg/expert-icon.svg"
+            alt="experts-logo"
+            class="experts-logo"
+        /></span>
+        <span><p routerLink="experts" class="menu-txt">Expertos</p></span>
+      </div>
+      <div class="tags-item">
+        <span
+          ><img
+            src="./../assets/svg/tag-icon.svg"
+            alt="tags-logo"
+            class="tags-logo"
+        /></span>
+        <span><p routerLink="tags" class="menu-txt">Etiquetas</p></span>
+      </div>
+    </div>
+  </mat-sidenav>
+ 
 <app-toolbar-lists
-  [listName]="listName"
-  [tag]="tag"
-  [length]="length"
+[listName]="listName"
+[tag]="tag"
+[length]="length"
 ></app-toolbar-lists>
 <app-tags-table></app-tags-table>
+</mat-sidenav-container>
+

@@ -9,17 +9,24 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ExpertRemarksComponent } from './pages/expert-remarks/expert-remarks.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
+import {RegisterPageComponent} from './pages/register-page/register-page.component';
+import { ExpertsTableComponent } from './components/elements/experts-table/experts-table.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'experts',
+    redirectTo: 'home',
   },
   {
     path: 'home',
     pathMatch: 'full',
     component: HomePageComponent,
+  },
+  {
+    path: 'register',
+    pathMatch: 'full',
+    component: RegisterPageComponent,
   },
   {
     path: 'experts',

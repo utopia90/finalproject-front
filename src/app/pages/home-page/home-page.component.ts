@@ -22,13 +22,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     var logged = sessionStorage.getItem('loggedIn');
-    console.log(logged);
-
-    window.alert(
-      'Para loguearse, tienes que introducir el correo: admin, y en password: admin'
-    );
     this.loginForm = this.formBuilder.group({
-      mail: [
+      email: [
         '',
         Validators.compose([
           Validators.required,
@@ -48,16 +43,22 @@ export class HomePageComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.value.mail && this.loginForm.value.password) {
-      this.authService.login(this.loginForm.value);
-      if (this.authService.getloggedIn()) {
-        this.router.navigate(['/experts']);
-        this.isLoggedIn.emit(true);
-      }
-    } else {
-      alert('Error: No Token Received');
-      this.router.navigate(['/home']);
-      this.isLoggedIn.emit(false);
-    }
+
+    if (this.loginForm.value.email && this.loginForm.value.password) {
+      this.authSubscription = this.authService.login(this.loginForm.value)
+      .subscribe((response) => {
+        console.log(response)
+        if(response){
+          console.log("login con éxito");
+          this.authService.setLoggedIn(true);
+          this.router.navigate(['/experts']);
+        }else{
+          alert('Error: No Token Received');
+          this.authService.setLoggedIn(false);
+          sessionStorage.removeItem('Token');
+        }
+      });
   }
 }
+  }
+

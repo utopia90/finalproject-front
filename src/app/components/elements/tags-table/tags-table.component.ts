@@ -3,8 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { TagsTableDataSource, TagsTableItem } from './tags-table-datasource';
-import { TagsService } from '../../../services/tags.service';
 import { Router } from '@angular/router';
+import { TagsService } from 'src/app/services/tags.service';
+
 
 @Component({
   selector: 'app-tags-table',
@@ -16,7 +17,8 @@ export class TagsTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<TagsTableItem>;
   dataSource;
-  blocks: [{ id: '' }, { name: '' }];
+  blocks;
+  nameTagOption;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
@@ -39,4 +41,17 @@ export class TagsTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+  filterByNameTag() {
+    this.blocks = this.blocks.filter((x) =>
+      x.name.includes(this.nameTagOption));
+  }
+
+  removeTag(id) {
+    this.tagsService.deleteExpertTag(id).subscribe((response) => {
+      window.alert('tag eliminada');
+    });
+    this.blocks.map((x) => x.id === id? this.blocks.splice(this.blocks.indexOf(x), 1) : x)
+    }
 }
+

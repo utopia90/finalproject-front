@@ -48,7 +48,6 @@ export class ExpertsTableDataSource extends DataSource<ExpertsTableItem> {
       return merge(
         observableOf(this.data),
         this.paginator.page,
-        this.sort.sortChange
       ).pipe(
         map(() => {
           return this.getPagedData(this.getSortedData([...this.data]));
@@ -89,17 +88,7 @@ export class ExpertsTableDataSource extends DataSource<ExpertsTableItem> {
       return data;
     }
 
-    return data.sort((a, b) => {
-      const isAsc = this.sort?.direction === 'asc';
-      switch (this.sort?.active) {
-        case 'name':
-          return compare(a.name, b.name, isAsc);
-        case 'id':
-          return compare(+a.id, +b.id, isAsc);
-        default:
-          return 0;
-      }
-    });
+    
   }
 }
 

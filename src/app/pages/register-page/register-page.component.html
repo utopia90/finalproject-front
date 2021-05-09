@@ -1,3 +1,5 @@
+
+  
 <div class="home-container__block">
   <div class="home-container__block home-container__block--left">
     <div class="home-container__block__top">
@@ -30,14 +32,20 @@
   <div class="home-container__block home-container__block--right">
     <div class="login-form">
       <h2 class="login-form__title">Bienvenido/a</h2>
-      <h4 class="login-form__subtitle">Inicia sesión para continuar</h4>
+      <h4 class="login-form__subtitle">Rellene sus datos para registrarse</h4>
       <mat-card>
         <mat-card-content>
           <div class="expert-submit-form">
-            <form [formGroup]="loginForm" (submit)="login()">
+            <form [formGroup]="registerForm" (submit)="register()">
               <div class="expert-submit-form__block">
                 <mat-form-field>
                   <input matInput placeholder="Email" formControlName="email" />
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Nombre" formControlName="name" />
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Apellido" formControlName="surname" />
                 </mat-form-field>
                 <mat-form-field>
                   <input
@@ -51,11 +59,10 @@
               <div class="expert-submit-form__bottom">
                 <div class="expert-submit-form__bottom__left">
                   <p class="password-forgot">Has Olvidado la Contraseña?</p>
-                  <p class="register-link">
-                    Nuevo usuario? <span routerLink="/register">Crear Cuenta</span>
-                  </p>
+                  <p class="login-back" routerLink="home">Volver al Login</p>
+
                 </div>
-                <button class="login-btn" type="submit">Iniciar Sesión</button>
+                <button class="login-btn" type="submit">Registrarme</button>
               </div>
             </form>
           </div>
@@ -64,3 +71,5 @@
     </div>
   </div>
 </div>
+
+
