@@ -41,11 +41,14 @@ export class AuthService {
       name: registerForm.name,
       surname: registerForm.surname,
     };
-   
 
+  
     return this.http.post(
       'https://serene-wave-12377.herokuapp.com/api/register',
       body)
+
+      
+
   }
 
   getloggedIn() {

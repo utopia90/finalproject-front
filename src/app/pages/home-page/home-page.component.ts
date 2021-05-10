@@ -43,22 +43,28 @@ export class HomePageComponent implements OnInit {
   }
 
   login() {
-
-    if (this.loginForm.value.email && this.loginForm.value.password) {
-      this.authSubscription = this.authService.login(this.loginForm.value)
-      .subscribe((response) => {
-        console.log(response)
-        if(response){
-          console.log("login con éxito");
-          this.authService.setLoggedIn(true);
-          this.router.navigate(['/experts']);
-        }else{
-          alert('Error: No Token Received');
-          this.authService.setLoggedIn(false);
-          sessionStorage.removeItem('Token');
-        }
-      });
+    if (
+      this.loginForm.value.email &&
+      this.loginForm.value.mail.match(
+        '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
+      ) &&
+      this.loginForm.value.password
+    ) {
+      this.authSubscription = this.authService
+        .login(this.loginForm.value)
+        .subscribe((response) => {
+          console.log(response);
+          if (response) {
+            console.log('login con éxito');
+            this.authService.setLoggedIn(true);
+            sessionStorage.setItem('Token', response.token);
+            this.router.navigate(['/experts']);
+          } else {
+            alert('Error: No Token Received');
+            this.authService.setLoggedIn(false);
+            sessionStorage.removeItem('Token');
+          }
+        });
+    }
   }
 }
-  }
-
