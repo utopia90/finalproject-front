@@ -45,9 +45,6 @@ export class HomePageComponent implements OnInit {
   login() {
     if (
       this.loginForm.value.email &&
-      this.loginForm.value.mail.match(
-        '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
-      ) &&
       this.loginForm.value.password
     ) {
       this.authSubscription = this.authService
