@@ -13,7 +13,6 @@ import { EventEmitter } from '@angular/core';
 export class HomePageComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
   authSubscription: Subscription = new Subscription();
-  @Output() isLoggedIn = new EventEmitter();
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -54,12 +53,10 @@ export class HomePageComponent implements OnInit {
           if (response) {
             console.log('login con éxito');
             this.authService.setLoggedIn(true);
-            sessionStorage.setItem('Token', response.token);
             this.router.navigate(['/experts']);
           } else {
             alert('Error: No Token Received');
             this.authService.setLoggedIn(false);
-            sessionStorage.removeItem('Token');
           }
         });
     }

@@ -39,13 +39,11 @@ export class RegisterPageComponent implements OnInit {
         Validators.compose([
           Validators.required,
           Validators.email,
-          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ]),
       ],
       password: [
         '',
         Validators.compose([Validators.required, Validators.minLength(5)]),
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$'),
       ],
       name: ['', Validators.required],
     });
@@ -53,7 +51,6 @@ export class RegisterPageComponent implements OnInit {
 
   register() {
     if (
-      this.registerForm.value.email &&
       this.registerForm.value.email.match(
         '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
       ) &&
