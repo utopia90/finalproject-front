@@ -55,7 +55,8 @@ export class RegisterPageComponent implements OnInit {
         '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
       ) &&
       this.registerForm.value.surname &&
-      this.registerForm.value.password &&
+      this.registerForm.value.password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$'
+      ) &&
       this.registerForm.value.name
     ) {
       this.authService.register(this.registerForm.value).subscribe(
@@ -79,7 +80,7 @@ export class RegisterPageComponent implements OnInit {
         }
       );
     } else {
-      alert('por favor, rellene todos los campos correctamente');
+      alert('por favor, rellene todos los campos correctamente. La contraseña debe tener al menos 8 caracteres y 2 números');
     }
 
    

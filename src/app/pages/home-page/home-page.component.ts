@@ -48,17 +48,19 @@ export class HomePageComponent implements OnInit {
     ) {
       this.authSubscription = this.authService
         .login(this.loginForm.value)
-        .subscribe((response) => {
-          console.log(response);
-          if (response) {
-            console.log('login con éxito');
+        .subscribe(
+          (response) => {
+            alert(
+              'el login se ha realizado con éxito'
+            );
             this.authService.setLoggedIn(true);
             this.router.navigate(['/experts']);
-          } else {
-            alert('Error: No Token Received');
+          },
+          (err) => {
+            alert('por favor, introduce unas credenciales correctas');
             this.authService.setLoggedIn(false);
           }
-        });
+        );
     }
   }
 }
